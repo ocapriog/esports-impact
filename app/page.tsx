@@ -48,7 +48,6 @@ export default function EsportsImpactTool() {
     total: number;
   } | null>(null);
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: parseFloat(value) });
@@ -73,7 +72,7 @@ export default function EsportsImpactTool() {
       <div className="grid grid-cols-2 gap-4">
         {Object.entries(inputs).map(([key, val]) => (
           <div key={key} className="flex flex-col gap-1">
-            <Label htmlFor={key}>{inputLabels[key]}</Label>
+            <Label htmlFor={key}>{inputLabels[key as keyof typeof inputLabels]}</Label>
             <Input
               id={key}
               name={key}
