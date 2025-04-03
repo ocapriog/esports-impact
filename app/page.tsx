@@ -39,7 +39,15 @@ export default function EsportsImpactTool() {
     prizes: 5000,
   });
 
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState<{
+    totalVisitor: number;
+    organizer: number;
+    direct: number;
+    indirect: number;
+    induced: number;
+    total: number;
+  } | null>(null);
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
