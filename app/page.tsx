@@ -41,7 +41,7 @@ export default function EsportsImpactTool() {
 
   const [result, setResult] = useState(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setInputs({ ...inputs, [name]: parseFloat(value) });
   };
